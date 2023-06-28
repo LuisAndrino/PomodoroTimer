@@ -1,4 +1,4 @@
-import { displayACounter } from "./timer";  
-
+import { displayACounter, displayRestTime } from "./timer";  
 
 displayACounter();
+
