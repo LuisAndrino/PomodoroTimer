@@ -1,4 +1,11 @@
-import { displayACounter, displayRestTime } from "./timer";  
+import { displayACounter} from "./timer";  
+import { displayRestTime } from "./timer.mjs";
 
-displayACounter();
+
+
+const startbutton = document.querySelector(".Start");
+
+startbutton.addEventListener('click', () => {
+    displayACounter()
+})
 

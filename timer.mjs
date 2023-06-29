@@ -10,18 +10,20 @@ const displayMessage = document.querySelector(".message");
 const pauseRest = document.querySelector(".pauseRest");
 
 // Setting the timer to 15 Minutes as a Test
-let time = 5;
+let time = 2;
 let Interval;
+let RestInterval;
 // This is the countdown
 function displayACounter() {
     Interval = setInterval(() => {
         if (time > 0) {
-            convertinToMinutes(time);
             time -= 1;
+            convertinToMinutes(time);
             displayMessage.classList.add("hide");
         } else {
             displayMessage.classList.remove("hide");
             displayMessage.textContent = "Time is up!";
+            displayRestTime()
         }
     }, 1000);
 }
@@ -59,7 +61,7 @@ pauseRest.addEventListener("click", () => {
         : (pauseRest.textContent = "Pause Pause Rest");
 
     if (pauseRest.textContent === "Resume Rest") {
-        clearInterval(Interval);
+        clearInterval(RestInterval);
         console.log("UWu");
     } else {
         displayRestTime();
@@ -102,17 +104,16 @@ function formatNumberWithLeadingZeros(number) {
     });
 }
 
-
 //This is for the rest time
-let restTime = 5;
+let restTime = 300;
 
 function displayRestTime() {
     if (time === 0) {
-        Interval = setInterval(() => {
+        RestInterval = setInterval(() => {
             if (restTime >= 0) {
                 convertinToMinutes(restTime);
-                restTime -= 1;
                 displayMessage.classList.add("hide");
+                restTime -= 1;
             } else {
                 displayMessage.classList.remove("hide");
                 displayMessage.textContent = "Rest Time is up!";
@@ -121,4 +122,5 @@ function displayRestTime() {
     }
 }
 
-export { displayACounter, displayRestTime };
+
+export { displayACounter,  displayRestTime };
