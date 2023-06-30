@@ -70,7 +70,6 @@ restartButton.addEventListener("click", () => {
 
   if (restartButton.textContent === "Resume") {
     clearTimerInterval();
-    console.log("UWu");
   } else {
     displayACounter();
   }
@@ -84,7 +83,6 @@ pauseRest.addEventListener("click", () => {
 
   if (pauseRest.textContent === "Resume Rest") {
     clearRestInterval();
-    console.log("UWu");
   } else {
     displayRestTime();
   }
