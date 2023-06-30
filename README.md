@@ -1,7 +1,7 @@
 # PomodoroTimer
 ## Description 🕒
 
-A simple Pomodoro clock ⏰ used as a method for agile task management. It involves focusing on a task for 15 minutes and then taking a 5-minute break.
+A simple Pomodoro clock ⏰ used as a method for agile task management. It involves focusing on a task for 15 minutes and then taking a 5-minute break. Here you can see the [project](https://luisandrino.github.io/PomodoroTimer/)
 
 ## Goal 🎯
 
