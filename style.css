@@ -133,6 +133,9 @@ button {
     }
 }
 @media (min-width: 769px) {
+    h1{
+        font-size: 3rem;
+    }
     body {
         width: 100%;
         font-family: "DotGothic16", sans-serif;
