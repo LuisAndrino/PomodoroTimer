@@ -157,7 +157,7 @@ function formatNumberWithLeadingZeros(number) {
 }
 
 // This is for the rest time
-let restTime = 10;
+let restTime = 300;
 let displayRestTimeInterval = true;
 playSound = false;
 
