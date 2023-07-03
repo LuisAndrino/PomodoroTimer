@@ -9,6 +9,9 @@ const thirtyMinutesButton = document.querySelector(".treinta");
 const displayMessage = document.querySelector(".message");
 const pauseRest = document.querySelector(".pauseRest");
 const startButton = document.querySelector(".Start");
+const ownTime = document.querySelector(".own");
+
+// This is the sound that will play when the timer reaches 0
 const soundBeep = new Audio("mixkit-alarm-digital-clock-beep-989.wav");
 
 // This is just a placeholder for the minutes and seconds
@@ -21,6 +24,7 @@ let time = 900;
 let Interval = null;
 let RestInterval = null;
 let displayMessageInterval = true;
+let playSound = false;
 
 // This function displays the countdown timer
 function displayACounter() {
@@ -31,7 +35,14 @@ function displayACounter() {
             convertToMinutes(time);
             displayMessage.classList.add("hide");
         } else {
-            soundBeep.play();
+            do {
+                playSound = true;
+                soundBeep.play();
+                setTimeout(() => {
+                    soundBeep.pause();
+                    soundBeep.currentTime = 0;
+                }, 8000);
+            } while (!playSound);
             displayRestTime();
             pauseTimer.classList.add("hide");
             pauseRest.classList.remove("hide");
@@ -125,6 +136,18 @@ thirtyMinutesButton.addEventListener("click", () => {
     }
 });
 
+// Event listener for the own time button
+ownTime.addEventListener("click", () => {
+    if (time > 0) {
+        time = Number(prompt("Enter the time in minutes"));
+        time = time * 60;
+    } else if (time === 0 && !RestInterval) {
+        time = Number(prompt("Enter the time in minutes"));
+        time = time * 60;
+        displayACounter();
+    }
+});
+
 // This function formats a number with leading zeros
 function formatNumberWithLeadingZeros(number) {
     return number.toLocaleString("en-US", {
@@ -134,8 +157,9 @@ function formatNumberWithLeadingZeros(number) {
 }
 
 // This is for the rest time
-let restTime = 300;
+let restTime = 10;
 let displayRestTimeInterval = true;
+playSound = false;
 
 // This function displays the rest time
 function displayRestTime() {
@@ -152,7 +176,14 @@ function displayRestTime() {
                     startButton.classList.remove("hide");
                     displayMessage.classList.remove("hide");
                     displayRestTimeInterval = false;
-                    soundBeep.play();
+                    do {
+                        playSound = true;
+                        soundBeep.play();
+                        setTimeout(() => {
+                            soundBeep.pause();
+                            soundBeep.currentTime = 0;
+                        }, 2000);
+                    } while (!playSound);
                     clearRestInterval();
                 }
             }
