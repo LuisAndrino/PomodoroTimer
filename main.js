@@ -12,7 +12,7 @@ const startButton = document.querySelector(".Start");
 const ownTime = document.querySelector(".own");
 
 // This is the sound that will play when the timer reaches 0
-const soundBeep = new Audio("mixkit-alarm-digital-clock-beep-989.wav");
+const soundBeep = new Audio("./audio/mixkit-alarm-digital-clock-beep-989.wav");
 
 // This is just a placeholder for the minutes and seconds
 minutes.textContent = "00";

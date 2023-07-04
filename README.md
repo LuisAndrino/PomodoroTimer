@@ -11,8 +11,8 @@ My goal with this project was to create a Pomodoro clock to help me with my proc
 
 Here are two screenshots of the project:
 
-![Screenshot 1](https://imgur.com/pCOnTTk)
-![Screenshot 2](https://imgur.com/IAHZisi)
+![Pomodoro 1][/img/pomodoro1.png]
+![Pomodoro 2][/img/pomodoro2.png]
 
 ## Roadmap 🗺️
 
