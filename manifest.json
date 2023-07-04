@@ -1,0 +1,9 @@
+{
+  "name": "Mi Reloj Pomodoro",
+  "short_name": "Reloj Pomodoro",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+}
+
