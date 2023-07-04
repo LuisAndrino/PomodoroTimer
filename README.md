@@ -11,8 +11,8 @@ My goal with this project was to create a Pomodoro clock to help me with my proc
 
 Here are two screenshots of the project:
 
-!(pomodoro1)[/img/pomodoro1.png]
-!(Pomodoro 2)[/img/pomodoro2.png]
+![pomodoro 1](/img/pomodoro1.png)
+![Pomodoro 2](/img/pomodoro2.png)
 
 ## Roadmap 🗺️
 
