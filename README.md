@@ -17,7 +17,9 @@ Here are two screenshots of the project:
 ## Roadmap 🗺️
 
 - Add CSS effects, such as a circular countdown.
-- Transform the project into a PWA (Progressive Web Application).
+- ~Transform the project into a PWA (Progressive Web Application).~ Thanks to [PWA Builder](https://www.pwabuilder.com/) now it is a PWA! 🥳
+- Replace SetIntervals with RequestAnimationFrame. (This because I learned that SetInterval is not precise).
+
 ## FAQ ❓
 
 **Why is it so simple?** 
