@@ -202,3 +202,4 @@ startButton.addEventListener("click", () => {
     }
 });
 
+Console.log("uwu")
