@@ -1,7 +1,7 @@
 # PomodoroTimer
 ## Description 🕒
 
-A simple Pomodoro clock ⏰ used as a method for agile task management. It involves focusing on a task for 15 minutes and then taking a 5-minute break. Here you can see the [project](https://luisandrino.github.io/PomodoroTimer/)
+A simple Pomodoro clock ⏰ used as a method for agile task management. It involves focusing on a task for 15 minutes and then taking a 5-minute break. Here you can see the [project](https://luisandrino.github.io/PomodoroTimer/).
 
 ## Goal 🎯
 
@@ -14,11 +14,17 @@ Here are two screenshots of the project:
 ![pomodoro 1](/img/pomodoro1.png)
 ![Pomodoro 2](/img/pomodoro2.png)
 
-## Roadmap 🗺️
+## TODO 📝
 
 - Add CSS effects, such as a circular countdown.
 - ~Transform the project into a PWA (Progressive Web Application).~ Thanks to [PWA Builder](https://www.pwabuilder.com/) now it is a PWA! 🥳
 - Replace SetIntervals with RequestAnimationFrame. (This because I learned that SetInterval is not precise).
+
+## Roadmap 🗺
+
+- Add stats.
+- Add more personalization (ex: choose a theme).
+
 
 ## FAQ ❓
 

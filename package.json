@@ -2,7 +2,7 @@
   "name": "pomodoro-timer",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://luisandrino.github.io/PomodoroTimer", 
+  "homepage": "https://luisandrino.github.io/PomodoroTimer",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,7 +12,6 @@
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
-    "gh-pages": "^5.0.0",
-    "vite": "^4.3.9"
+    "gh-pages": "^5.0.0"
   }
 }

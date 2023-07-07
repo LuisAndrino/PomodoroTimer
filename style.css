@@ -17,13 +17,13 @@ body {
 }
 
 .Timer {
-    height: 40%;
-    width: 40%;
+    height: 300px;
+    width: 300px;
     background-color: #d9d9d9;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    clip-path: circle(50% at 50% 50%);
 }
 
 .Timer span {
@@ -58,13 +58,12 @@ button {
     }
 
     .Timer {
-        height: 30%;
-        width: 70%;
+        height: 100px;
+        width: 100px; 
         background-color: #d9d9d9; 
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 50%;
         font-size: 30px;
     }
 
@@ -102,13 +101,12 @@ button {
     }
 
     .Timer {
-        height: 50%;
-        width: 50%;
+        height: 200px;
+        width: 200px;
         background-color: #d9d9d9;
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 50%;
         font-size: 50px;
     }
 
@@ -145,13 +143,12 @@ button {
     }
 
     .Timer {
-        height: 30%;
-        width: 30%;
+        height: 200px;
+        width: 200px;
         background-color: #d9d9d9;
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 50%;
         font-size: 40px;
     }
 
@@ -191,14 +188,13 @@ button {
     }
 
     .Timer {
-        height: 50%;
-        width: 35%;
+        height: 250px;
+        width: 250px;
         background-color: #d9d9d9;
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 50%;
-        font-size: 80px;
+        font-size: 60px;
     }
 
     .Timer span {

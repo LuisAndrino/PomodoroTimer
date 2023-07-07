@@ -34,15 +34,12 @@ function displayACounter() {
             time -= 1;
             convertToMinutes(time);
             displayMessage.classList.add("hide");
+            playSound = true;
         } else {
-            do {
-                playSound = true;
+            if (playSound) {
                 soundBeep.play();
-                setTimeout(() => {
-                    soundBeep.pause();
-                    soundBeep.currentTime = 0;
-                }, 8000);
-            } while (!playSound);
+                playSound = false;
+            }
             displayRestTime();
             pauseTimer.classList.add("hide");
             pauseRest.classList.remove("hide");
@@ -157,10 +154,9 @@ function formatNumberWithLeadingZeros(number) {
 }
 
 // This is for the rest time
-let restTime = 300;
+let restTime = 15;
 let displayRestTimeInterval = true;
-playSound = false;
-
+let playRestSound = true;
 // This function displays the rest time
 function displayRestTime() {
     if (time === 0 && !RestInterval) {
@@ -176,14 +172,10 @@ function displayRestTime() {
                     startButton.classList.remove("hide");
                     displayMessage.classList.remove("hide");
                     displayRestTimeInterval = false;
-                    do {
-                        playSound = true;
+                    if (playRestSound) {
                         soundBeep.play();
-                        setTimeout(() => {
-                            soundBeep.pause();
-                            soundBeep.currentTime = 0;
-                        }, 2000);
-                    } while (!playSound);
+                        playRestSound = false;
+                    }
                     clearRestInterval();
                 }
             }
