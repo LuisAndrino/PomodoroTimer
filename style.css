@@ -45,8 +45,51 @@ button {
     font-size: 18px;
     cursor: pointer;
 }
+@media screen and (max-width: 267px) {
+    body {
+        width: 100%;
+        font-family: "DotGothic16", sans-serif;
+        font-size: 12px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
 
-@media screen and (max-width: 425px) {
+    .Timer {
+        height: 30%;
+        width: 70%;
+        background-color: #d9d9d9; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 30px;
+    }
+
+    .Timer span {
+        background-color: #d9d9d9;
+        color: black;
+        font-size: 90%;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    button {
+        background-color: #d9d9d9;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 268px) and (max-width: 425px) {
     body {
         width: 100%;
         font-family: "DotGothic16", sans-serif;
@@ -59,8 +102,8 @@ button {
     }
 
     .Timer {
-        height: 40%;
-        width: 70%;
+        height: 50%;
+        width: 50%;
         background-color: #d9d9d9;
         display: flex;
         align-items: center;
@@ -89,7 +132,7 @@ button {
         cursor: pointer;
     }
 }
-@media (min-width: 426px)and (max-width: 768px) {
+@media (min-width: 426px) and (max-width: 768px) {
     body {
         width: 100%;
         font-family: "DotGothic16", sans-serif;
@@ -133,7 +176,7 @@ button {
     }
 }
 @media (min-width: 769px) {
-    h1{
+    h1 {
         font-size: 3rem;
     }
     body {
@@ -149,7 +192,7 @@ button {
 
     .Timer {
         height: 50%;
-        width: 30%;
+        width: 35%;
         background-color: #d9d9d9;
         display: flex;
         align-items: center;
