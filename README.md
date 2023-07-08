@@ -36,3 +36,7 @@ In reality, there is no significant difference. In fact, I recommend using PomoF
 
 **What's next?** 
 Next, I plan to rewrite the entire project using a framework like Qwik or even explore using Rust (BTW) with Lepos.
+
+## Acknowledgments 🙏
+
+- The new background was made by Bárbara Rodríguez, here is the link to her [Codepen](https://codepen.io/baarbaracrr/pen/KKovmGb).

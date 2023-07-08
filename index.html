@@ -10,11 +10,20 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="style.css" />
-    <script>navigator.serviceWorker.register("service-worker.js")</script> 
-    <link rel="manifest" href="manifest.json" />    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link rel="icon" href="img/pomodoro.png" />
+        <link rel="stylesheet" href="background.css" />
+        <script>
+            navigator.serviceWorker.register("service-worker.js");
+        </script>
+        <link rel="manifest" href="manifest.json" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link rel="icon" href="img/pomodoro.png" />
     </head>
     <body>
+        <div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
         <h1>Pomodoro Timer</h1>
         <button class="Start">▶</button>
         <section class="Timer"></section>
