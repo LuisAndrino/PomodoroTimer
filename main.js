@@ -24,7 +24,9 @@ let time = 900;
 let Interval = null;
 let RestInterval = null;
 let displayMessageInterval = true;
-let playSound = false;
+let playSound;
+
+let isThereRestTime = false;
 
 // This function displays the countdown timer
 function displayACounter() {
@@ -35,12 +37,16 @@ function displayACounter() {
             convertToMinutes(time);
             displayMessage.classList.add("hide");
             playSound = true;
+            isThereRestTime = true;
         } else {
             if (playSound) {
                 soundBeep.play();
                 playSound = false;
             }
-            displayRestTime();
+            if(isThereRestTime){
+                displayRestTime();
+                isThereRestTime = false;
+            }
             pauseTimer.classList.add("hide");
             pauseRest.classList.remove("hide");
             if (displayMessageInterval) {
@@ -154,11 +160,10 @@ function formatNumberWithLeadingZeros(number) {
 }
 
 // This is for the rest time
-let restTime = 15;
 let displayRestTimeInterval = true;
-let playRestSound = true;
+let playRestSound ;
 // This function displays the rest time
-function displayRestTime() {
+function displayRestTime(restTime = 300) {
     if (time === 0 && !RestInterval) {
         clearRestInterval(); // Clear any existing rest interval
 
@@ -167,6 +172,7 @@ function displayRestTime() {
                 convertToMinutes(restTime);
                 restTime -= 1;
                 displayMessage.classList.add("hide");
+                playRestSound = true;
             } else {
                 if (displayRestTimeInterval) {
                     startButton.classList.remove("hide");
