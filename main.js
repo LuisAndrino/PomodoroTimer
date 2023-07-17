@@ -21,18 +21,17 @@ timer.append(minutes, ":", seconds);
 
 // Setting the initial time to 900 seconds for testing purposes
 let time = 900;
+let Interval = null;
+let RestInterval = null;
+let displayMessageInterval = true;
 let playSound;
 
 let isThereRestTime = false;
-let isPaused = false;
-let isRestPaused = false;
 
 // This function displays the countdown timer
-function displayACounter(timestamp) {
-    if (!startTime) startTime = timestamp;
-    const elapsedTime = timestamp - startTime;
-    if (elapsedTime >= 1000 && !isPaused) {
-        startTime = timestamp;
+function displayACounter() {
+    clearTimerInterval(); // Clear any existing timer interval
+    Interval = setInterval(() => {
         if (time > 0) {
             time -= 1;
             convertToMinutes(time);
@@ -55,20 +54,7 @@ function displayACounter(timestamp) {
                 displayMessageInterval = false;
             }
         }
-    }
-    requestAnimationFrame(displayACounter);
-}
-
-let startTime;
-// This function starts the countdown timer
-function startCounter() {
-    if (time > 0) {
-        requestAnimationFrame(displayACounter);
-        startButton.classList.add("hide");
-    } else {
-        displayMessage.classList.remove("hide");
-        displayMessage.textContent = "Please select a time";
-    }
+    }, 1000);
 }
 
 // This function converts the time displayed in seconds to minutes and seconds format
@@ -85,15 +71,16 @@ function convertToMinutes(time) {
 
 // This function clears the timer interval
 function clearTimerInterval() {
-    startTime = null;
+    clearInterval(Interval);
+    Interval = null;
+    displayMessageInterval = true;
 }
 
 // This function clears the rest interval
 function clearRestInterval() {
     clearInterval(RestInterval);
-    startTime = null;
+    RestInterval = null;
     displayRestTimeInterval = true;
-    isRestPaused = true;
 }
 
 // Event listener for the restart/pause button
@@ -103,11 +90,9 @@ pauseTimer.addEventListener("click", () => {
         : (pauseTimer.textContent = "⏸");
 
     if (pauseTimer.textContent === "⏯") {
-        isPaused = true;
         clearTimerInterval();
     } else {
-        isPaused = false;
-        requestAnimationFrame(displayACounter);
+        displayACounter();
     }
 });
 
@@ -119,21 +104,18 @@ pauseRest.addEventListener("click", () => {
         : (pauseRest.textContent = "⏸");
 
     if (pauseRest.textContent === "⏯") {
-        isRestPaused = true;
         clearRestInterval();
     } else {
-        isRestPaused = false;
         displayRestTime();
     }
 });
-
 // Event listener for the 15 minutes button
 fifteenMinutesButton.addEventListener("click", () => {
     if (time > 0) {
         time = 900; // 900 seconds = 15 minutes
     } else if (time === 0 && !RestInterval) {
         time = 900;
-        startCounter();
+        displayACounter();
     }
 });
 
@@ -143,7 +125,7 @@ twentyFiveMinutesButton.addEventListener("click", () => {
         time = 1500; // 1500 seconds = 25 minutes
     } else if (time === 0 && !RestInterval) {
         time = 1500;
-        startCounter();
+        displayACounter();
     }
 });
 
@@ -153,7 +135,7 @@ thirtyMinutesButton.addEventListener("click", () => {
         time = 1800; // 1800 seconds = 30 minutes
     } else if (time === 0 && !RestInterval) {
         time = 1800;
-        startCounter();
+        displayACounter();
     }
 });
 
@@ -165,7 +147,7 @@ ownTime.addEventListener("click", () => {
     } else if (time === 0 && !RestInterval) {
         time = Number(prompt("Enter the time in minutes"));
         time = time * 60;
-        startCounter();
+        displayACounter();
     }
 });
 
@@ -180,13 +162,13 @@ function formatNumberWithLeadingZeros(number) {
 // This is for the rest time
 let displayRestTimeInterval = true;
 let playRestSound ;
-let RestInterval = null;
 // This function displays the rest time
 function displayRestTime(restTime = 300) {
-    if (time === 0 && !RestInterval && !isRestPaused) {
-        clearTimerInterval(); // Clear any existing timer interval
+    if (time === 0 && !RestInterval) {
+        clearRestInterval(); // Clear any existing rest interval
+
         RestInterval = setInterval(() => {
-            if (restTime >= 0 && !isRestPaused) {
+            if (restTime >= 0) {
                 convertToMinutes(restTime);
                 restTime -= 1;
                 displayMessage.classList.add("hide");
@@ -210,9 +192,11 @@ function displayRestTime(restTime = 300) {
 // Event listener for the start button
 startButton.addEventListener("click", () => {
     if (time > 0) {
-        startCounter();
+        displayACounter();
+        startButton.classList.add("hide");
     } else {
         displayMessage.classList.remove("hide");
         displayMessage.textContent = "Please select a time";
     }
 });
+
